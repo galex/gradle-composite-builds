@@ -1,0 +1,10 @@
+rootProject.name = 'comp-client'
+
+def sdk = '../comp-sdk'
+if (file(sdk).exists()) {
+    includeBuild(sdk) {
+        dependencySubstitution {
+            substitute module('il.co.galex:comp-sdk') with project(':')
+        }
+    }
+}
